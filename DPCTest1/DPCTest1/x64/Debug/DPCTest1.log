@@ -1,0 +1,10 @@
+﻿  Building 'DPCTest1' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  DPCTest.c
+  MyDriver.c
+  正在生成代码...
+  DPCTest1.vcxproj -> D:\DriverExercises\DPCTest1\x64\Debug\DPCTest1.sys
+  Done Adding Additional Store
+  Successfully signed: D:\DriverExercises\DPCTest1\x64\Debug\DPCTest1.sys
+  
+  Inf2Cat task was skipped as there were no inf files to process
+  
