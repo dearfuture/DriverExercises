@@ -8,6 +8,7 @@
 VOID DriverUnload(PDRIVER_OBJECT pDriverObj)
 {
 	UNICODE_STRING strLink;
+	//KeCancelTimer(&Timer);
 	RtlInitUnicodeString(&strLink, LINK_NAME);
 	IoDeleteSymbolicLink(&strLink);
 	IoDeleteDevice(pDriverObj->DeviceObject);
@@ -141,6 +142,8 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObj, PUNICODE_STRING pRegistryString)
 
 	TestDPC();
 	TestDPC2();
+
+	TestTimerDPC(1000);
 	//EnumDriver(pDriverObj);
 	//MyGetCurrentTime();
 	//CreateThreadTest();

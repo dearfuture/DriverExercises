@@ -30,5 +30,15 @@ VOID DPCRoutine2
 );
 VOID TestDPC2();
 
+
 extern KTIMER Timer;
 extern KDPC TimerDPC;
+VOID TimerDPCRoutine
+(
+	KDPC *DPC,
+	PVOID DeferredContext,
+	PVOID SystemArgument1,
+	PVOID SystemArgument2
+);
+
+void TestTimerDPC(ULONG msec);

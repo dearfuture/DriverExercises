@@ -53,3 +53,24 @@ VOID TestDPC2()
 
 KTIMER Timer;
 KDPC TimerDPC;
+VOID TimerDPCRoutine
+(
+	KDPC *DPC,
+	PVOID DeferredContext,
+	PVOID SystemArgument1,
+	PVOID SystemArgument2
+)
+{
+	DbgPrint("TimerDPC Expired\n");
+	//KeSetTimer
+}
+
+void TestTimerDPC(ULONG msec)
+{
+	KeInitializeTimer(&Timer);
+	KeInitializeDpc(&TimerDPC, TimerDPCRoutine, NULL);
+
+	LARGE_INTEGER interval;
+	interval.QuadPart = -10 *1000LL * msec;
+	KeSetTimer(&Timer, interval, &TimerDPC);
+}
